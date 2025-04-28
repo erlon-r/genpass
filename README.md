@@ -1,30 +1,61 @@
-# Genpass
+# Genpass: Password Generator Tool
 
-Strong password generator
+## Create secure, strong, and unpredictable passwords
 
-## 💻 Prerequisites
+Genpass is a command-line tool designed to create strong, unpredictable passwords. Leveraging the power of Python, Genpass offers a simple yet powerful solution for generating passwords of varying lengths and complexities, and also allows you to exclude specific characters for greater control.
 
-- Python3.13
+## ⚙️ System Requirements
 
-## ☕ How to use
-To use Genpass, follow these steps:
+Before using the program, make sure your system meets the following prerequisites:
 
-- **Unix:**
+- **Python:** Version 3.13 or higher must be installed on your machine. You can download the latest version from the official [Python website](https://www.python.org).
 
-    This command generates a 18 character password and excludes the possibility of the characters "ab123H%":
+## 🚀 How to use:
+
+Using Genpass is incredibly simple. Just follow the instructions below, depending on your operating system:
+
+- **Unix (macOS, Linux, etc.)::**
+
+    To generate a password with a specific length and exclude certain characters, use the following command structure:
+
+    ```bash
+    python3 genpass/main.py -l <length> -e <excluded_characters>
     ```
+    **Example:** To generate a password with 18 characters, excluding the characters "a", "b", "1", "2", "3", "H", and "%", run:
+
+    ```bash
     python3 genpass/main.py -l 18 -e ab123H%
     ```
+
 - **Windows:**
 
-    replace ```python3```to ```python``. The options are the same.
+    The command structure remains the same, but you'll typically replace ```python3``` with ```python```:
 
+    ```bash
+    python genpass/main.py -l <length> -e <excluded_characters>
+    ```
+    **Example**: To achieve the same result as the Unix example above on Windows, execute:
 
-### options
+    ```bash
+    python genpass/main.py -l 18 -e ab123H%
+    ```
 
-- ```-l``` : password length (default 20)
-- ```-e``` : characters to exclude from password
-- ```-h, --help``` : show help message and exit
+### Available Options: Tuning Password Generation
 
-## 📝 License
-This project is under license. See the [LICENSE](LICENSE.md) file for more details.
+The following command line options give you precise control over password generation:
+
+- ```-l```, ```--length```: This option allows you to specify the desired length of the password. The value you provide should be an integer representing the number of characters. If you omit this option, Genpass will default to generating a 20-character password.
+
+    **Example:** ```python genpass/main.py -l 32``` will generate a password with 32 characters.
+
+- ```-e```, ```--exclude```: Use this option to define a string of characters that you want to explicitly exclude from the generated password. This can be useful if certain systems or personal preferences restrict the use of specific symbols or letters.
+
+    **Example:** ```python genpass/main.py -e "!@#$"``` will generate a password that does not contain any of the characters: !, @, #, or $.
+
+- ```-h```, ```--help```: This option displays a helpful message outlining the available commands and options, providing a quick reference guide directly in your terminal.
+
+    **Example:** ```python genpass/main.py -h``` or ```python genpass/main.py --help``` will show the help information.
+
+## 📝 Licensing Information
+
+This project operates under a specific license. For comprehensive details regarding the permissions and limitations of using, distributing, and modifying this software, please refer to the [LICENSE](LICENSE.md) file located in the project's root directory. We encourage you to review this file to understand your rights and responsibilities.
