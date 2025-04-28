@@ -22,11 +22,11 @@ def remove_chars(string: str) -> str:
     return ''.join(chars).strip()
 
 
-def print_header_error() -> None:
-    """Prints the header of an error message."""
-    color_red = '\033[31m'
+def print_header_warning() -> None:
+    """Prints the header of a warning message."""
+    color_red = '\033[33m'
     color_end = '\033[0m'
-    print(f'genpass: {color_red}error{color_end}:', end=' ')
+    print(f'genpass: {color_red}Warning{color_end}:', end=' ')
 
 
 def make_password(chars: list, length: int) ->  str:
@@ -72,18 +72,13 @@ if __name__ == '__main__':
 
     chars = remove_chars(args.e).split()
 
-    print_password = True
+    print(make_password(chars, args.l))
 
     if len(chars) != 4:
-        print_password = False
-        print_header_error()
+        print_header_warning()
         print('a strong password needs numbers, symbols ' \
               'upper and lower case letters.')
 
     if args.l < 8:
-        print_password = False
-        print_header_error()
+        print_header_warning()
         print('a strong password must contain at least 8 characters.')
-
-    if print_password:
-        print(make_password(chars, args.l))
