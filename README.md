@@ -44,11 +44,11 @@ Using Genpass is incredibly simple. Just follow the instructions below, dependin
 
 The following command line options give you precise control over password generation:
 
-- ```-l```, ```--length```: This option allows you to specify the desired length of the password. The value you provide should be an integer representing the number of characters. If you omit this option, Genpass will default to generating a 20-character password.
+- ```-l```: This option allows you to specify the desired length of the password. The value you provide should be an integer representing the number of characters. If you omit this option, Genpass will default to generating a 20-character password.
 
     **Example:** ```python genpass/main.py -l 32``` will generate a password with 32 characters.
 
-- ```-e```, ```--exclude```: Use this option to define a string of characters that you want to explicitly exclude from the generated password. This can be useful if certain systems or personal preferences restrict the use of specific symbols or letters.
+- ```-e```: Use this option to define a string of characters that you want to explicitly exclude from the generated password. This can be useful if certain systems or personal preferences restrict the use of specific symbols or letters.
 
     **Example:** ```python genpass/main.py -e "!@#$"``` will generate a password that does not contain any of the characters: !, @, #, or $.
 
